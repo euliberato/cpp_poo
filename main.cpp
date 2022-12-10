@@ -15,7 +15,7 @@ void instancia(string nome, string descricao, string regiao, int ataque, int def
     Pokedex.push_back(Pokemons);
 
     system("cls");
-    cout << "Criado com sucesso!" << endl;
+    cout << "Os dados do Pokemon foram cadastrados com sucesso!" << endl;
     cout << "Pokemons catalogados: " << Pokedex.size() << endl;
 }
 
@@ -49,44 +49,55 @@ void visualizar(){
     system("cls");
 
     int op = -1;
-    cout << "Filtrar por\n[1] Tipos\n[2] Regiao\n[3] Lendarios" << endl;
+    cout << "Filtrar por\n[1] Nome\n[2] Tipos\n[3] Regiao\n[4] Lendarios" << endl;
     cin >> op;
 
     if(op == 1){
-        string tipo;
-        cout << "Digite o nome do tipo: " << endl;
-        cin >> tipo;
+        string nome;
+        cout << "Digite o nome do Pokemon que você deseja vizualizar: " << endl;
+        cin >> nome;
         for (int i = 0; i < Pokedex.size(); i++){
-            if(tipo == Pokedex[i]->getTipo()){
+            if(nome == Pokedex[i]->getNome()){
                 cout << "[Resultado]" << endl;
                 cout << "Nome: " << Pokedex[i]->getNome() << endl;
+                cout << "Descricao: " << Pokedex[i]->getDescricao() << endl;
             }
         }
-
     }else if(op == 2){
         string tipo;
-        cout << "Digite o nome do tipo: " << endl;
+        cout << "Digite o tipo que será filtrado: " << endl;
         cin >> tipo;
+        cout << "[Resultado]" << endl;
+        cout << "Estes são os Pokemon do tipo escolhido:" << endl;
         for (int i = 0; i < Pokedex.size(); i++){
             if(tipo == Pokedex[i]->getTipo()){
-                cout << "[Resultado]" << endl;
                 cout << "Nome: " << Pokedex[i]->getNome() << endl;
             }
         }
+
     }else if(op == 3){
-        //POR LENDARIO
-    }
-
-    for (int i = 0; i < Pokedex.size(); i++){
-        if(nome == Pokedex[i]->getNome()){
-            cout << "[Resultado]" << endl;
-            cout << "Nome: " << Pokedex[i]->getNome() << endl;
-            cout << "Descricao: " << Pokedex[i]->getDescricao() << endl;
-            
+        string regiao;
+        cout << "Digite a regiao desejada: " << endl;
+        cin >> regiao;
+        cout << "[Resultado]" << endl;
+        cout << "Estes são os Pokemon da Regiao escolhida:" << endl;
+        for (int i = 0; i < Pokedex.size(); i++){
+            if(regiao == Pokedex[i]->getRegiao()){
+                cout << "Nome: " << Pokedex[i]->getRegiao() << endl;
+            }
         }
+    }else if(op == 4){
+        /*int escolha;
+        cout << "Voce deseja vizualizar:\n[1] Lendários\n[2]Não-Lendários\n" << endl;
+        cin >> escolha;
+        for (int i = 0; i < Pokedex.size(); i++){
+            if(Pokedex[i]->getLendario()){
+                cout << "[Resultado]" << endl;
+                cout << "Nome: " << Pokedex[i]->getNome() << endl; */
     }
-
+            
 }
+
 
 void atualizar(){
 
