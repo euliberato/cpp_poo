@@ -6,13 +6,8 @@ using namespace std;
 
 class Pokemon {
 protected:
-
-    //Criar vetor...
     string nome, descricao;
-
-    //Pokemon * Pokemons
-    //RegiaoPokemon * regiao;
-
+    //Criar um vetor 
 public:
 
     Pokemon(string nome, string descricao){
@@ -20,12 +15,12 @@ public:
         this->nome = nome;
         this->descricao = descricao;
         
-        //regiao = new RegiaoPokemon[];
+        //Alocar dados no vetor
         
     };
 
     ~Pokemon(){
-        //delete[] regiao;
+        //Delete p/ o vetor - delete [] nomeDoVetor
     };
 
     //GETTERS
